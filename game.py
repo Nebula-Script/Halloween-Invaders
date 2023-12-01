@@ -511,7 +511,7 @@ def game_func(meter):
                     done_bar.draw()
                     if Mouse.is_button_pressed(mouse,1) and not(last_mouse[0]):
                         f = open("score.txt", "a")
-                        f.write(f"\n{username}\n{score}")
+                        f.write(f"\n{username}\n{int(score)}")
                         go_to_menu = True
                         break
                 done.draw()
