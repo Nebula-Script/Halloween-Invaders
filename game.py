@@ -1,6 +1,7 @@
 from PPlay.sprite import *
 from init_assets import *
 from random import randint
+from datetime import date
 
 enemy_offset = (screen.width/2) - 240
 
@@ -37,6 +38,8 @@ enemy_delay = False
 speed = 8
 bobbing = 4
 bobcounter = 0
+
+today = str(date.today())
 
 def game_func(meter):
     confirm_menu_sfx.play()
@@ -511,7 +514,7 @@ def game_func(meter):
                     done_bar.draw()
                     if Mouse.is_button_pressed(mouse,1) and not(last_mouse[0]):
                         f = open("score.txt", "a")
-                        f.write(f"\n{username}\n{int(score)}")
+                        f.write(f"\n{username}\n{int(score)}\n{today}")
                         go_to_menu = True
                         break
                 done.draw()

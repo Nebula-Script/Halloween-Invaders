@@ -113,8 +113,8 @@ f = open("score.txt", "r+")
 scores = f.readlines()
 scorelist = []
 
-for i in range(int(len(scores)/2)):
-    scorelist.append((scores[i*2][:-1],int(scores[i*2 + 1])))
+for i in range(int(len(scores)/3)):
+    scorelist.append((scores[i*3][:-1],int(scores[i*3 + 1]),scores[i*3 + 2]))
 ranklist = sorted(scorelist, key=lambda i: -i[1])
 
 
